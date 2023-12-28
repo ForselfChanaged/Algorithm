@@ -25,6 +25,26 @@ public:
 			if (order) break;
 		}
 	}
+	/// <summary>
+	/// 选择排序，在未排序的序列找到最小元素，存放在排序序列起始位置
+	/// 在剩余元素中继续寻找最小元素，然后存放在已经排序序列末尾，重复此步骤
+	/// </summary>
+	/// <param name="nums"></param>
+	static void SelectSort(vector<int> &nums)
+	{
+		for (int i = 0; i < nums.size(); i++)
+		{
+			int minIndex = i;
+			for (int j = i+1; j < nums.size(); j++)
+			{
+				if (nums[j] < nums[minIndex])
+				{
+					minIndex = j;//找到最小值索引
+				}
+			}
+			swap(nums[i], nums[minIndex]);
+		}
+	}
 	static void Print(vector<int>& nums)
 	{
 		for (int i = 0; i < nums.size(); i++)
