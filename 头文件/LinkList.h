@@ -8,13 +8,17 @@ struct ListNode {
 class LinkList
 {
 public:
-	LinkList(ListNode* node) :head(node) {};
+	LinkList();
 	int get(int index);
 	void addAtHead(int val);
 	void addAtTail(int val);
 	void addAtIndex(int index, int val);
+	void delteAtIndex(int index);
 	void DeleteVal(int val);
 	void Print();
+	static void reverseLink(LinkList list);
+
 private: ListNode* head;
+private:int size;
 };
 
